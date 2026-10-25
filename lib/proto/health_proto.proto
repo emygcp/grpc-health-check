@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package health_check.v1;
+
+message CheckServerHealthRequest {}
+
+message CheckServerHealthResponse {
+  string response = 1;
+  int32 port = 2;
+}
+
+service HealthCheckService {
+  rpc CheckServerHealth(CheckServerHealthRequest) returns (CheckServerHealthResponse);
+}
